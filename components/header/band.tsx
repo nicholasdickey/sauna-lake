@@ -3,8 +3,8 @@ import React, { useState } from "react";
 const Band: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <div className="flex justify-between items-center  h-fit text-slate-50 md:text-slate-600 bg-slate-400 md:bg-slate-100 dark:bg-slate-600  dark:text-slate-50 lg:text-6xl md:text-4xl text-4xl lg:px-12 px-4 py-4">
-            <div className="flex flex-col w-full">
+        <div className="z-10 flex justify-between items-center  h-fit text-slate-50 md:text-slate-600 bg-slate-400 md:bg-slate-100 dark:bg-slate-600  dark:text-slate-50 lg:text-6xl md:text-4xl text-4xl lg:px-12 px-4 py-4">
+            <div className="flex flex-col w-full h-fit z-10 bg-inherit">
                 <div className="flex flex-col md:flex-row justify-between md:items-center w-full pb-4">
                     <div className="flex">
 

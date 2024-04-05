@@ -10,10 +10,10 @@ const Header: React.FC = () => {
         console.log("dark===>:", window.matchMedia('(prefers-color-scheme: dark)').matches)
         },[])
     return (
-        <div className="text-black dark:text-white dark:bg-slate-900">
-            <Topline />
-                <div className="md:fixed top-5 w-full h-10 my-0">
-
+        <div className="text-black dark:text-white dark:bg-slate-900 z-10 ">
+       
+                <div className="md:fixed top-0 w-full  my-0 z-10">
+                <Topline />
                 <Band />
                 <Nav />
             </div>
