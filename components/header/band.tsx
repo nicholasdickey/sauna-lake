@@ -1,42 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Band: React.FC = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
     return (
         <div className="flex justify-between items-center  h-fit text-slate-50 md:text-slate-600 bg-slate-400 md:bg-slate-100 dark:bg-slate-600  dark:text-slate-50 lg:text-6xl md:text-4xl text-4xl lg:px-12 px-4 py-4">
             <div className="flex flex-col w-full">
                 <div className="flex flex-col md:flex-row justify-between md:items-center w-full pb-4">
                     <div className="flex">
-                        <button data-collapse-toggle="navbar-default" type="button" className="ml-4 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+
+                        Little Sand Sauna
+                        <button data-collapse-toggle="navbar-default" type="button" className="ml-6 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false"
+                            onClick={() => setMenuOpen(!menuOpen)}>
                             <span className="sr-only">Open main menu</span>
                             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
                             </svg>
                         </button>
-                        <div className="md:hidden w-full " id="navbar-default">
-                            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                                <li>
-                                    <a href="#" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-                                </li>
-                                <li>
-                                    <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-                                </li>
-                                <li>
-                                    <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                        Little Sand Sauna
-
                     </div>
+                    {menuOpen && <div onClick={() => setMenuOpen(false)}
+                        className="md:hidden w-full h-full m-0 fixed top-36 left-0 bg-slate-300">
+                        <ul>
+                            <li className="text-center text-lg  m-10 py-2 bg-slate-500 text-slate-50">Home</li>
+                            <li className="text-center text-lg  m-10 py-2 bg-slate-500 text-slate-50">Login</li>
+                            <li className="text-center text-lg  m-10 py-2 bg-slate-500 text-slate-50">Nordic Sauna Experience</li>
+                            <li className="text-center text-lg  m-10 py-2 bg-slate-500 text-slate-50">Availability</li>
+                            <li className="text-center text-lg  m-10 py-2 bg-slate-500 text-slate-50">F.A.Q.</li>
+                        </ul>
+                    </div>}
                     <div className="flex mt-4">
-                        <div className="hidden md:visible mr-2"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">CHECK AVAILABILITY</button></div>
-                        <div className="mr-10"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">LOGIN</button></div>
+                        <div className="hidden md:block mr-2"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">CHECK AVAILABILITY</button></div>
+                        <div className="hidden md:block mr-10"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">LOGIN</button></div>
                     </div>
                 </div>
 
