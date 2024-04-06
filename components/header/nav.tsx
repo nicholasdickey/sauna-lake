@@ -52,7 +52,7 @@ const Helmet:React.FC<HelmetProps> = ({sections}) => {
     return(
         <div className=" z-10 hidden md:flex flex-row justify-between lg:px-40 md:px-30 sm:px-10 px-2 dark:bg-slate-900 bg-slate-200">
         {sections.map((section) => {
-            return <Link key={section.id} id={`nav-${section.id}`} href='' onClick={()=>scrollToHash(section.id)} className={`hover:text-blue-400 hover:cursor-pointer ${activeSection === section.id ? 'text-green-400' : ''}`}>{section.name}</Link>   
+            return <Link key={section.id} id={`nav-${section.id}`} href='' onClick={()=>scrollToHash(section.id)} className={`hover:text-blue-400 hover:cursor-pointer ${activeSection === section.id ? 'text-green-600' : ''}  ${activeSection === section.id ? 'dark:text-green-400' : ''}`}>{section.name}</Link>   
 
         }  
         )}
