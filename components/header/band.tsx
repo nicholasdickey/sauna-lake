@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
-const Band: React.FC = () => {
+interface BandProps {
+    scrolled:boolean;
+}
+const Band: React.FC<BandProps> = ({scrolled}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <div className="z-10 flex justify-between items-center  h-fit text-slate-50 md:text-slate-600 bg-slate-400 md:bg-slate-100 dark:bg-slate-600  dark:text-slate-50 lg:text-6xl md:text-4xl text-4xl lg:px-12 px-4 py-4">
+        <div className={`z-10 flex justify-between items-center transition-all  h-fit text-slate-50 md:text-slate-600 bg-slate-400 md:bg-slate-100 dark:bg-slate-600  dark:text-slate-50 ${scrolled?'lg:text-4xl md:text-2xl text-xl':'lg:text-6xl md:text-4xl text-4xl'} lg:px-12 px-4 py-2`}>
             <div className="flex flex-col w-full h-fit z-10 bg-inherit">
                 <div className="flex flex-col md:flex-row justify-between md:items-center w-full pb-4">
                     <div className="flex">
@@ -33,7 +36,7 @@ const Band: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center">
+                <div className={`${scrolled?'hidden':'flex'} transition-display duration-1000 ease-in-out items-center`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#fff"></rect><path fill="#0e2a69" d="M31 14L15 14 15 4 11 4 11 14 1 14 1 18 11 18 11 28 15 28 15 18 31 18 31 14z"></path><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#ac2431"></rect><path fill="#fff" d="M31 12L17 12 17 4 9 4 9 12 1 12 1 20 9 20 9 28 17 28 17 20 31 20 31 12z"></path><path fill="#061a57" d="M31 14L15 14 15 4 11 4 11 14 1 14 1 18 11 18 11 28 15 28 15 18 31 18 31 14z"></path><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#2e69a4"></rect><path fill="#f7cf46" d="M31 14L15 14 15 4 11 4 11 14 1 14 1 18 11 18 11 28 15 28 15 18 31 18 31 14z"></path><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path></svg>
